@@ -2,6 +2,12 @@ from icrawler.builtin import GoogleImageCrawler
 
 name = input('По какому ключу хотите искать изображения? ')
 max_num = int(input('Введите количество изображений для скачивания: '))
+rewrite = input('Перезаписать ранее найденные фото?')
+
+if rewrite == 'да':
+    rewrite = True
+elif rewrite == 'нет':
+    rewrite = False
 
 
 def google_img_downloader():
@@ -13,7 +19,7 @@ def google_img_downloader():
 
     crawler.crawl(keyword=name,
                   max_num=max_num,
-                  overwrite=True,
+                  overwrite=rewrite,
                   filters=filters)
 
 
