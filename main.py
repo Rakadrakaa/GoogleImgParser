@@ -2,11 +2,14 @@ from icrawler.builtin import GoogleImageCrawler
 
 name = input('По какому ключу хотите искать изображения? ')
 max_num = int(input('Введите количество изображений для скачивания: '))
-rewrite = input('Перезаписать ранее найденные фото?')
+rewrite = input('Перезаписать ранее найденные фото? \n Введите да или нет: ')
 
-if rewrite == 'да':
+if rewrite == 'Да' or 'да':
     rewrite = True
-elif rewrite == 'нет':
+elif rewrite == 'Нет' or 'нет':
+    rewrite = False
+else:
+    print('Ошибка, файлы не будут перезаписаны. ')
     rewrite = False
 
 
